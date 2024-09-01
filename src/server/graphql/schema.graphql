@@ -1,0 +1,15 @@
+type Query {
+    getEntries(): [Entry]
+}
+
+type Entry {
+    id: ID
+    text: String
+    date: String 
+}
+
+input Entry {
+    id: ID
+    test: String
+    date: String
+}

@@ -9,10 +9,12 @@ const GET_ENTRIES = gql`
     getEntries {
       _id
       text
-      Date
+      date
+      title
     }
   }
 `;
+
 
 const LandingPage = () => {
   const [entries, setEntries] = useState([]);
@@ -32,7 +34,7 @@ const LandingPage = () => {
     <div style={{ padding: "1rem" }}>
       <Header />
       <div style={{ display: "flex" }}>
-        <EntryToday />
+        <EntryToday entries={entries} setEntries={setEntries}/>
         <EntryHistory entries={entries} setEntries={setEntries} />
       </div>
     </div>
